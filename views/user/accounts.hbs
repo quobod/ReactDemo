@@ -1,0 +1,66 @@
+<div class="small-12 medium-12 large-12 columns accounts v-scroll">
+    <a href="/user/add" data-toggle="addNewProduct" class="add-button">
+        <span class="input-group-labelbutton button-primary" style="margin:0;">
+            <i class="fa fa-plus-square" aria-hidden="true" style="font-size:24px;margin:0;"></i>
+        </span>
+    </a>
+    <ul class="accordion" data-accordion data-allow-all-closed="true">
+       {{#each accounts }}
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title" data-target="#{{this.id}}"><strong style="font-size:18pt;">{{ this.value.organization }}</strong></a>
+                <div id="{{this.id}}" class="accordion-content" data-tab-content>
+                
+                    <div class="row">
+                        <div id="form" class="small-12 medium-12 large-12 columns form">
+                            <div class="input-group">
+                                <label for="title">Organization</label>
+                                <!-- <span class="input-group-label"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span> -->
+                                <input type="text" class="input-group-field readOnly" value="{{this.value.organization}}" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="username">Username</label>
+                                <!-- <span class="input-group-label"><i class="fa fa-user" aria-hidden="true"></i></span> -->
+                                <input type="text" class="input-group-field readOnly" value="{{this.value.username}}" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email">E-Mail</label>
+                                <!-- <span class="input-group-label"><i class="fa fa-envelope" aria-hidden="true"></i></span> -->
+                                <input type="email" class="input-group-field readOnly" value="{{this.value.email}}" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="password">Password</label>
+                                <!-- <span class="input-group-label"><i class="fa fa-unlock" aria-hidden="true"></i></span> -->
+                                <input type="text" class="input-group-field readOnly" value="{{this.value.password}}" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="site">Site</label>
+                                <!-- <span class="input-group-label"><i class="fa fa-sitemap" aria-hidden="true"></i></span> -->
+                                <input type="text" class="input-group-field readOnly" value="{{this.value.site}}" readonly>
+                            </div>
+                            
+                            {{#each this.value.extra}}
+                                <div class="input-group">
+                                    <label for="{{key}}">{{key}}</label>
+                                    <!-- <span class="input-group-label"><i class="fa fa-thumb-tack" aria-hidden="true"></i></span> -->
+                                    <input type="text" class="input-group-field readOnly" value="{{value}}" readonly>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="smail-12 medium-12 large-12 columns clearfix">                                                             
+                            <button type="button" class="button primary float-right update-button" data-id="{{this.id}}">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                        
+                </div>
+            </li>
+       {{/each}}
+    </ul>
+</div>

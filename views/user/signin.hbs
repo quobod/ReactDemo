@@ -1,0 +1,27 @@
+<div class="row">
+    <h1>Sign In</h1>
+    {{#if hasErrors}}
+       <div class="alert alert-danger">
+        {{# each messages }}
+            <p>{{this}}</p>
+        {{/each }}
+       </div>
+    {{/if}}
+    <div class="small-12 medium-12 large-12 columns">
+        <form action="/user/signin" method="post">
+            <div class="input-group">
+                <span class="input-group-label"><i class="fa fa-envelope"></i></span>
+                <input type="email" id="email" name="email" class="input-group-field" placeholder="Email" required>
+            </div>
+            
+            <div class="input-group">
+                <span class="input-group-label"><i class="fa fa-key"></i></span>
+                <input type="password" id="password" name="password" class="input-group-field" placeholder="Password" required>
+            </div>
+            
+            <input type="hidden" name="admin" value="{{isAdmin}}">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button type="submit" class="button">Sign In</button>
+        </form>    
+    </div>
+</div>

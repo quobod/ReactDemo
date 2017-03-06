@@ -1,0 +1,66 @@
+{{#unless admin}}
+<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="main-menu"></button>
+    <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+        <ul class="dropdown menu" data-responsive-menu="drilldown medium-dropdown">
+            <li class="menu-text">Dashboard</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li class="hide"><a id="revealer" data-open="searcher" href="#"></a></li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="dropdown menu">
+            <li>
+                {{# if login }}
+                <a href="/user/accounts">
+                    <i class="fa fa-address-card" aria-hidden="true"></i>
+                    Accounts
+                </a>
+                {{/if}}
+            </li>
+            <li>
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent">
+                        <a href="#">User</a>
+                        <ul class="menu">
+                            {{# if login }}
+                            <li>
+                                <a href="/user/profile">
+                                    User Profile
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="/user/logout">
+                                    Logout
+                                </a>
+                            </li>
+                            {{ else }}
+                            <li><a href="/user/signup">Sign Up</a></li>
+                            <li><a href="/user/signin">Sign In</a></li>
+                            {{/if}}
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <form method="post" action="/search-for-item">
+                    <div class="input-group">
+                        <span class="input-group-label" style="margin:0;"><i class="fi-page-search" style="font-size:18pt;color:rgb(100,120,180);padding:0;margin:0;"></i></span>
+                        <input class="input-group-field" type="text" name="keyword"  placeholder="Search" required>
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </li>               
+        </ul>
+    </div>
+</div>
+{{/unless}}

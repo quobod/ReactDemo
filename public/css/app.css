@@ -1,0 +1,191 @@
+/* Global */
+.v-scroll {
+	overflow:scroll;
+}	
+
+.accounts {
+    margin-top:5%;
+}
+
+.choice-menu {
+    width:18vw;
+    /* border:solid 1pt green; */
+}
+
+input.readOnly {
+    background:#fff;
+    font-weight:bolder;
+}
+
+.edit-button, .delete-button, .choice-menu {
+    margin:2px;
+    /* border:solid 1pt green; */
+}
+
+.delete-button {
+    margin-top:0px;
+}
+
+img {
+    height:170px;
+    width:200px;
+    padding:0;
+    margin:0;
+}
+
+#collapsing-tabs {
+    margin-top:10px;
+}
+
+.profile-thumbnail {
+    height:15%;
+    width:70%;
+    padding:0;
+    margin:0;
+}
+
+.video-content {
+    position:absolute;
+    top: 70px;
+    left:0px;
+    height: 100vh;
+    width:100vw;
+    z-index: -1;
+}
+
+.video-content video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.index {
+    color: #fff;
+    margin-top:10%;
+}
+
+.edit-form {
+    margin-top:2%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+
+
+
+/* Contact Page */
+.contact {
+    margin-top:10%;
+}
+
+.gmap {
+    margin:10px;
+    width:50vw;
+    /* border:solid 1pt red; */
+}
+
+.contact-form {
+    /* border:solid 1pt green; */
+	border: 1px solid rgba(100,100,185,.3);
+	border-radius:10px;
+	box-shadow: 10px 10px 5px #888888;
+	box-sizing: border-box;
+    width:290px;
+    margin:10px;
+    padding:5px;
+}
+
+
+
+
+
+/* Product Page */
+.media-object {
+    margin:10px;
+}
+
+
+
+
+
+/* Admin Profile */
+.admin-form [type="text"] {
+    height:30px;
+}
+
+.admin-form [type="submit"] {
+    height:30px;
+}
+
+.new-product-form {
+    width:600px;
+    margin:auto;
+    padding:10px;
+}
+
+.new-product {
+    
+}
+
+
+
+
+
+/* Admin Sign in Page */
+.admin-signin {
+    padding:20px;
+}
+
+
+
+
+
+@media screen and (max-width:499px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:40vw;
+    }
+}
+
+@media screen and (max-width:412px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:18vw;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:18vw;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:18vw;
+    }
+}
+
+@media screen and (max-width:822px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:20vw;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .choice-menu {
+        /* border:solid 1pt green; */
+        width:30vw;
+    }
+}

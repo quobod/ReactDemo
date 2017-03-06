@@ -1,0 +1,64 @@
+<div class="small-12 medium-12 large-12 columns edit-form">
+    <form method="post" action="/user/edit">
+        <div class="row">
+            <div id="form" class="small-12 medium-12 large-12 columns form">
+                <div class="input-group">
+                    <label for="title"><strong>Organization</strong></label>
+                    <!-- <span class="input-group-label"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span> -->
+                    <input type="text" id="organization" name="organization" class="input-group-field" value="{{account.organization}}" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="username"><strong>Username</strong></label>
+                    <!-- <span class="input-group-label"><i class="fa fa-user" aria-hidden="true"></i></span> -->
+                    <input type="text" id="username" name="username" class="input-group-field" value="{{account.username}}" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email"><strong>E-Mail</strong></label>
+                    <!-- <span class="input-group-label"><i class="fa fa-envelope" aria-hidden="true"></i></span> -->
+                    <input type="email" id="email" name="email" class="input-group-field" value="{{account.email}}" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password"><strong>Password</strong></label>
+                    <!-- <span class="input-group-label"><i class="fa fa-unlock" aria-hidden="true"></i></span> -->
+                    <input type="text" id="password" name="password" class="input-group-field" value="{{account.password}}" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="site"><strong>Site</strong></label>
+                    <!-- <span class="input-group-label"><i class="fa fa-sitemap" aria-hidden="true"></i></span> -->
+                    <input type="text" id="site" name="site" class="input-group-field" value="{{account.site}}" required>
+                </div>
+                {{#each account.extra}}
+                    <div class="input-group">
+                        <label for="{{key}}"><strong>{{key}}</strong></label>
+                        <!-- <span class="input-group-label"><i class="fa fa-thumb-tack" aria-hidden="true"></i></span> -->
+                        <input type="text" id="{{key}}" name="{{key}}" class="input-group-field" value="{{value}}">
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="smail-12 medium-12 large-12 columns clearfix">
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                <input type="hidden" name="id" value="{{ account._id }}">
+                <input type="hidden" name="rev" value="{{ account._rev }}">
+                <ul class="dropdown menu choice-menu float-left" data-dropdown-menu>
+                    <li>
+                        <a href="#">Add Input Field</a>
+                        <ul class="menu">
+                            <li><a id="textInput" href="#">Add Text Field</a></li>
+                            <li><a id="numberInput" href="#">Add Number Field</a></li>
+                            <li><a id="emailInput" href="#">Add Email Field</a></li>
+                            <li><a id="passwordInput" href="#">Add Password Field</a></li>
+                        </ul>
+                    </li>
+                </ul>                                
+                <button type="submit" class="button primary float-right submit-button" data-csrf="csrfToken">Submit</button>
+                <button type="button" class="button alert float-right delete-button" data-id="{{account._id}}" data-csrf="{{csrfToken}}" data-rev="{{account._rev}}">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>

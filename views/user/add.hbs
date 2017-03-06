@@ -1,0 +1,59 @@
+<div class="small-12 medium-12 large-12 columns">           
+    <h4 style="text-align:center;margin-top:35px;">Add New Profile</h4>         
+    <form class="new-profile-form clearfix" method="POST" action="/user/add">
+        <div id="form" class="form small-12 medium-12 large-12 columns">
+            <div class="input-group">
+                <input class="input-group-field" type="hidden" name="_csrf"  value="{{csrfToken}}" required>
+            </div>                    
+            <div class="input-group">
+                <span class="input-group-label" style="margin:0;">
+                    <i class="fa fa-building" aria-hidden="true"></i>
+                </span>
+                <input class="input-group-field" type="text" name="org"  placeholder="Organization" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label" style="margin:0;">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                <input class="input-group-field" type="text" name="username"  placeholder="Username" required>
+            </div>                    
+            <div class="input-group">
+                <span class="input-group-label" style="margin:0;">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+                <input class="input-group-field" type="email" name="email"  placeholder="E-Mail" required>
+            </div>                    
+            <div class="input-group">
+                <span class="input-group-label" style="margin:0;">
+                    <i class="fa fa-user-secret" aria-hidden="true"></i>
+                </span>
+                <input class="input-group-field" type="password" name="password"  placeholder="Password" required>
+            </div>                    
+            <div class="input-group">
+                <span class="input-group-label" style="margin:0;">                            
+                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                </span>
+                <textarea class="input-group-field" type="text" name="site"  placeholder="Site" required></textarea>
+            </div>      
+        </div>                    
+        <div class="row">
+            <div class="smail-12 medium-12 large-12 columns clearfix">
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                <input type="hidden" name="id" value="{{ account._id }}">
+                <input type="hidden" name="rev" value="{{ account._rev }}">
+                <ul class="dropdown menu choice-menu float-left" data-dropdown-menu>
+                    <li>
+                        <a href="#">Add Input Field</a>
+                        <ul class="menu">
+                            <li><a id="textInput" href="#">Add Text Field</a></li>
+                            <li><a id="numberInput" href="#">Add Number Field</a></li>
+                            <li><a id="emailInput" href="#">Add Email Field</a></li>
+                            <li><a id="passwordInput" href="#">Add Password Field</a></li>
+                        </ul>
+                    </li>
+                </ul>                                
+                <button type="submit" class="button primary float-right" data-csrf="csrfToken">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
