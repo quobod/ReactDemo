@@ -7,7 +7,9 @@
     "proman": "mocha test/product-manager-tests.js",
     "procla": "mocha test/product-class-tests.js",
     "tests": "mocha test",
-    "start": "nodemon app"
+    "start": "nodemon app",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Rick Walker",
   "license": "ISC",
@@ -35,10 +37,12 @@
     "promised-io": "^0.3.5",
     "serve-favicon": "^2.3.2",
     "timeparts": "^1.0.1",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.25.2"
   },
   "devDependencies": {
     "chalk": "^1.1.3",
     "mocha": "^3.2.0"
-  }
+  },
+  "snyk": true
 }
