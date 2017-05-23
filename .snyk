@@ -6,3 +6,6 @@ patch:
   'npm:request:20160119':
     - couchdb > request:
         patched: '2017-03-14T17:28:42.778Z'
+  'npm:ms:20170412':
+    - morgan > debug > ms:
+        patched: '2017-05-23T08:18:06.828Z'
